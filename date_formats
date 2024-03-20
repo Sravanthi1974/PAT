@@ -1,0 +1,31 @@
+#DATE FORMATS
+
+import datetime
+
+#create a date object representing current date
+current_date = datetime.date.today()
+
+#print the current date
+print(current_date)
+
+#create the date obj repr specific date
+specific_date = datetime.date(2023,5,15)
+print(specific_date)
+
+#calc diff btwn 2 dates
+date1 = datetime.date(2023,5,15)
+date2 = datetime.date(2023,5,30)
+date_diff = date2-date1
+print("Difference in date time" ,date_diff.days, "days")
+
+
+#formatted datetime
+for_dt = specific_date.strftime("%Y-%m-%d %H:%M:%S")
+
+
+#print a formatted string time date
+print(for_dt)
+
+#parsed date time object
+par_st= datetime.datetime.strptime("2023-05-15 10:30:00", "%Y-%m-%d %H:%M:%S")
+print(par_st)
