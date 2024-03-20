@@ -6,11 +6,11 @@ import datetime
 current_date = datetime.date.today()
 
 #print the current date
-print(current_date)
+print("Current Date:",current_date)
 
 #create the date obj repr specific date
 specific_date = datetime.date(2023,5,15)
-print(specific_date)
+print("Specific Date:",specific date)
 
 #calc diff btwn 2 dates
 date1 = datetime.date(2023,5,15)
@@ -29,3 +29,23 @@ print(for_dt)
 #parsed date time object
 par_st= datetime.datetime.strptime("2023-05-15 10:30:00", "%Y-%m-%d %H:%M:%S")
 print(par_st)
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+#DIFFERENT YEAR FORMATS
+print("year",now.strftime(%Y))
+print("2 digit year",now.strftime(%y))
+print("month in number",now.strftime(%m))
+print("month in abbreviation",now.strftime(%b))
+print("month in full name",now.strftime(%B))
+print("day of month",now.strftime(%d))
+print("day of week in number",now.strftime(%a))
+print("day of week in abbreviation",now.strftime(%A))
+
+
+
+
+
+
+
+
