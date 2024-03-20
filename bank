@@ -1,0 +1,30 @@
+class BankAccount:
+	def__init__(self,account_number,account_holder,balance=0):
+		self.account_number=account_number
+		self.account_holder=account_holder
+		self.balance=balance
+	def deposit(self,amount):
+		self.balance+=amount
+		print(f"\nAmount ${amount} deposited successfully.")
+		self.display_account_details()
+	def withdraw(self,amount):
+		if amount<=self.balance:
+			self.balance-=amountprint(f"\nAmount ${amount} withdrawn successfully.")
+			self.display_account_details()
+		else:
+			print("\nInsufficient balance.")
+	def display_account_details(self):
+		print("\nAccount Details:")
+		print(f"Account Number:{self.account_number}")
+		print(f"Account Holder:{self.account_holder}")
+		print(f"Balance:${self.balance}")
+#create an instance of BankAccount
+class with an EnglishName
+account=BankAccount("1234567890","Rahul")
+#deposit money
+account.deposit(5000)
+#withdraw money
+account.withdraw(2000)
+account.withdraw(4000)
+#display account details
+account.display_account_details()
