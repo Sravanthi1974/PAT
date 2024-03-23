@@ -1,0 +1,190 @@
+#Implementing Queue using linked list
+
+class Node:
+	def__init__(self,data):
+		self.data=data
+		self.next=None
+class Queue:
+	def__init__(self):
+		self.front=None
+		self.rare=None
+	def isEmpty(self):
+		return self.front is None
+	def enqueue(self,data):
+		new_node=Node(data)
+		if self.isEmpty():
+			self.front=new_node
+			self.rear=new_node
+		else:
+			self.rear.next=new_node
+			self.rear=new_node
+	def dequeue(Self):
+		if self.is_empty():
+			raise Exception("Queue is empty")
+		else:
+			data=self.front.data
+			if self.front==self.rear:
+				self.front=None
+				self.rear=None
+			else:
+				self.front=self.front.next
+			return data
+	def peek(Self):
+		if self.is_empty():
+			rasie Exception("Queue is empty")
+		else:
+			return self.front.data
+	def display(Self):
+		current=self.front 
+		while current:
+			print(current_data,end="")
+			current=current.next
+		print()
+#driver code:
+queue=Queue()
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+queue.enqueue(4)
+
+print("Queue elements:")
+queue.display() #output:1 2 3 4
+
+print("Peek:",queue.peek()) #output:peek1
+
+print("dequeue:", queue.dequeue()) #output:Dequeue :1
+print("Queue elements after dequeue:")
+queue.display() #output:2 3 4
+-----------------------------------------------------------------------------------
+
+#Implementing queue using 2 stacks
+
+class QueueUsingStacks:
+	def__init__(self)"
+		self.stack_enqueue=[]
+		self.stack_dequeue=[]
+	deff enqueue(self,item):
+		self.stack_enqueue.append(item)
+	def dequeue(self):
+		if not self.stack_dequeue:
+			if not self.stack_enqueue:
+				return "Queue is empty"
+			esle:
+				#transfer elements from enqueue stacks to dequeue stack
+				while self.stack_enqueue:
+					self.stack_dequeue.append(self.stack_enqueue.pop())
+		return self.stack_dequeue.pop()
+	def peek(self):
+		if not self.stack_dequeue:
+			if not self.stack_enqueue:
+				return "Queue is empty"
+			else:
+				#transfer elements from  enqueue stacks to dequeue stack
+				while self.stack_enqueue:
+					self.stack_dequeue.append(self.stack_enqueue.pop())
+		return self.stack_dequeue[-1]
+	def is_empty(self):
+		return not self.stack_enqueue and not self.stack_dequeue
+#driver code
+queue=QueueUsingStacks()
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+queue.enqueue(4)	
+print(queue.dequeue()) #output :1
+print(queue.peek()) #output:= 2
+print(queue.dequeue()) #output:2
+print(queue.isEmpty()) #output: False
+print(queue.dequeue()) #output:3
+print(queue.isEmpty()) #output: True
+
+
+-------------------------------------------------------------------------------------------
+#Implementing Queue using single stack
+
+class QueueUsingSingleStack:
+	def __init__(self):
+		self.stack=[]
+	def enqueue(self, item):
+		self.stack.append(item)
+	def dequeue(self):
+		if not self.stack:
+			return "Queue is empty"
+		elif len(self.stack) == 1:
+			return self.stack.pop()
+		else:
+			#recursive call to dequeue all but last elements
+			front = self.stack.pop()
+			dequeued_item = self.dequeue()
+			self.stack.append(front)
+			return dequeued_item
+	def peek(self):
+		if not self.stack
+		
+		
+		
+---------------------------------------------------------
+IMPLEMENTING k QUEUES IN A SINLE ARRAY/LIST
+
+class kQueuesInArray:
+	def __init__(self,k,n ):
+		self.k = k #number of queues
+		self.n = n #total size of array
+		self.queue = [0]*n #initialise array to store queue elements
+		self.front = [-1]*k #initialise array to store front indices of queue
+		self.rear = [-1]*k #initialise array to store rear indices of queue
+		self.next_index = list(range(1,n))+[-1] #initialise array to store next array elements
+		self.next_available = 0 #index of next available position in the array
+	def isEmpty(self, qn):
+		retrun self.front[qn] == -1
+	def isFull(self):
+		return self.next_available == -1
+	def enqueue(self, item,qn):
+		if self.isFull():
+			print("Queue Overflow")
+			return
+		new_index = self.next_available
+		self.next_available = self.next_index[new_index]
+		if self.isEmpty(qn):
+			self.front[qn] = new_index
+		else: 
+			self.next_index[self.rear[qn]] = new_index
+			
+		self.next_index[new_index] = -1
+		self.queue[new_index] = item
+		self.rear[qn] = new_index
+		
+	def dequeue(self,qn):
+		if self.isEmpty(qn):
+			print("Queue unserflow")
+			return None
+		front_index = self.front[qn]
+		item = self.queue[front_index]
+		
+		self.front[qn] = self.next_index[front_index]
+		self.next_index[front_index] = self.next_available
+		self.next_available = front_index
+		
+		return item
+		
+	
+#driver code:
+k_queues = kQueuesInArray(3,10) #create 3 queues in a single array of size 10
+k_queues.enqueue(1,0) #enqueue 1 into queue 0
+k_queues.enqueue(2,1) #enqueue 2 into queue 1
+k_queues.enqueue(3,2) #enqueue 2 into queue 1
+print(k_queues.dequeue(0)) #dequeue from queue 0, output: 1
+print(k_queues.dequeue(1))#dequeue from queue 1, output: 2
+print(k_queues.dequeue(2)) #dequeue from queue 2, output: 3
+
+---------------------------------------  ---------------------------------------------------
+LINKED LISTS:
+
+Traversal: visiting each element of linked list
+1. forward traversal
+2. backward traversal
+Searching: finding the specific element in a linked list
+1. searching for a given value
+2. searching for index of a given value 
+Updating: modifying the values 
+delete: 
