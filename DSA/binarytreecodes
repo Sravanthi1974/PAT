@@ -1,0 +1,49 @@
+--implementation of binary tree with 3 types of traversals
+
+class Node:
+	def __init__(self,key):
+		self.leftChild = None
+		self.rightChild = None
+		self.data = key
+#function to perform inorder tree traversal
+
+def InOrderTraversal(root):
+	if root:
+		InOrderTraversal(root.leftChild)
+		print(root.data, end=" ")
+		InOrderTraversal(root.rightChild)
+		
+#Function to perform preorder tree Traversal
+
+def PreOrderTraversal(root):
+	if root:
+		print(root.data, end=" ")
+		PreOrderTraversal(root.leftChild)
+		PreOrderTraversal(root.rightChild)
+		
+#Function to perform postoder tree traversal
+
+def PostOrderTraversal(root):
+	if root:
+		PostOrderTraversal(root.leftChild)
+		PostOrderTraversal(root.rightChild)
+		print(root.data, end = " ")
+		
+#Driver code
+if __name == "__main__":
+	root = Node(1)
+	root.leftChild = Node(2)
+	root.rightChild = Node(3)
+	root.leftChild.leftChild = Node(4)
+	root.leftChild.rightChild = Node(5)
+	root.roghtChild.leftChild = Node(6)
+	
+	#Function calls for traversals
+	print("inorder traversal of binary tree")
+	InOrderTraversal(root)
+	
+	print("\n Preorder traversal of binary tree")
+	PreOrderTraversal(root)
+	
+	print("\n Postorder traversal of binary tree")
+	PostOrderTraversal(root)
