@@ -1,0 +1,17 @@
+INSERTION IN A BINARY TREE IN LEVEL ORDER
+
+insertion is done in level-order, aka bfs. it involvesinserting nodes level by level,
+starting from the tree.
+
+algorithm:
+
+--start 
+---1. create a queue and enqueue the root node
+---2. while the queue is not empty, do :
+		a. dequeue a node from front of the queue
+		b. if left child of the dequeue node is empty, insert the new node as the left child.
+		otherwise, enqueu the left child
+		c. if the right child of the dequeue node is empty, indert the new node as the right child.
+		otherwise, enqueue the right child
+---3. repeat step 2 until the new node is inserted into the binary tree
+--End
